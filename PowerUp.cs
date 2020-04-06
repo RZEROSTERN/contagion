@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -64,7 +63,7 @@ namespace Contagion
             {
                 if(objects[i] is Hero)
             }*/
-            if (AnimationIsNot(Animations.PickUp) && objects[0].CheckCollision(BoundingBox) == true)
+            if(AnimationIsNot(Animations.PickUp) && objects[0].CheckCollision(BoundingBox) == true)
             {
                 Hero.score++;
                 ChangeAnimation(Animations.PickUp);

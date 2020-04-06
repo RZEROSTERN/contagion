@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
-
 
 namespace Contagion
 {
@@ -25,9 +23,9 @@ namespace Contagion
 
         public override void Initialize()
         {
-            if (bullets.Count == 0)
+            if(bullets.Count == 0)
             {
-                for (int i = 0; i < numOfBullets; i++)
+                for(int i = 0; i < numOfBullets; i++)
                 {
                     bullets.Add(new Bullet());
                 }
@@ -56,7 +54,7 @@ namespace Contagion
         {
             for (int i = 0; i < numOfBullets; i++)
             {
-                if (bullets[i].active == false)
+                if(bullets[i].active == false)
                 {
                     bullets[i].Fire(this, position, direction);
                     break;

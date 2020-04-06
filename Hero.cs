@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -14,9 +13,7 @@ namespace Contagion
     public class Hero : FireCharacter
     {
         public static int score;
-
-        SoundEffect song;
-        SoundEffectInstance songInstance;
+        public static int lives;
 
         public Hero()
         {
@@ -31,6 +28,7 @@ namespace Contagion
         public override void Initialize()
         {
             score = 0;
+            lives = 3;
             base.Initialize();
         }
 
@@ -44,32 +42,17 @@ namespace Contagion
             base.Load(content);
 
             boundingBoxOffset.X = 0; boundingBoxOffset.Y = 0; boundingBoxWidth = animationSet.width; boundingBoxHeight = animationSet.height;
-
-            song = content.Load<SoundEffect>("Audio\\song");
-
-            if (songInstance == null)
-                songInstance = song.CreateInstance();
         }
 
         public override void Update(List<GameObject> objects, Map map)
         {
             CheckInput(objects, map);
-            UpdateMusic();
             base.Update(objects, map);
-        }
-
-        private void UpdateMusic()
-        {
-            if (songInstance.State != SoundState.Playing)
-            {
-                songInstance.IsLooped = true;
-                songInstance.Play();
-            }
         }
 
         private void CheckInput(List<GameObject> objects, Map map)
         {
-            if (Character.applyGravity == false)
+            if(Character.applyGravity == false)
             {
                 if (Input.IsKeyDown(Keys.D) == true)
                 {
@@ -88,9 +71,7 @@ namespace Contagion
                 {
                     MoveUp();
                 }
-            }
-            else
-            {
+            } else {
                 if (Input.IsKeyDown(Keys.D) == true)
                 {
                     MoveRight();
@@ -108,7 +89,7 @@ namespace Contagion
 
             if (Input.KeyPressed(Keys.J))
                 Fire();
-
+            
         }
 
         protected override void UpdateAnimations()
@@ -118,14 +99,14 @@ namespace Contagion
 
             base.UpdateAnimations();
 
-            if (velocity != Vector2.Zero || jumping == true)
+            if(velocity != Vector2.Zero || jumping == true)
             {
                 if (direction.X < 0 && AnimationIsNot(Animations.RunLeft))
                     ChangeAnimation(Animations.RunLeft);
                 else if (direction.X > 0 && AnimationIsNot(Animations.RunRight))
                     ChangeAnimation(Animations.RunRight);
             }
-            else if (velocity == Vector2.Zero || jumping == false)
+            else if(velocity == Vector2.Zero || jumping == false)
             {
                 if (direction.X < 0 && AnimationIsNot(Animations.IdleLeft))
                     ChangeAnimation(Animations.IdleLeft);

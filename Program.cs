@@ -10,9 +10,9 @@ namespace Contagion
         [STAThread]
         static void Main(String[] args)
         {
-            using(Level1 engine = new Level1()) // Change to title
+            using (Game1 game = new Game1())
             {
-                engine.Run();
+                game.Run();
             }
         }
     }

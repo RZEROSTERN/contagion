@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -15,7 +14,7 @@ namespace Contagion
     {
         int respawnTimer;
         const int maxRespawnTimer = 60;
-
+        
         Random random = new Random();
         SoundEffect explosion;
 
@@ -47,7 +46,7 @@ namespace Contagion
 
         public override void Update(List<GameObject> objects, Map map)
         {
-            if (respawnTimer > 0)
+            if(respawnTimer > 0)
             {
                 respawnTimer--;
                 if (respawnTimer <= 0)

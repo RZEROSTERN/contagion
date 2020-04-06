@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -56,7 +55,7 @@ namespace Contagion
                 ApplyGravity(map);
 
             velocity.X = TendToZero(velocity.X, decel);
-            if (applyGravity == false)
+            if(applyGravity == false)
                 velocity.Y = TendToZero(velocity.Y, decel);
         }
 
@@ -105,7 +104,7 @@ namespace Contagion
             if (jumping == true)
                 return false;
 
-            if (velocity.Y == 0 && OnGround(map) != Rectangle.Empty)
+            if(velocity.Y == 0 && OnGround(map) != Rectangle.Empty)
             {
                 velocity.Y -= jumpVelocity;
                 jumping = true;
@@ -134,7 +133,7 @@ namespace Contagion
             if (applyGravity == true)
                 maxY = (int)jumpVelocity;
 
-            if (xAxis == true && velocity.X != 0)
+            if(xAxis == true && velocity.X != 0)
             {
                 if (velocity.X > 0)
                     futureBoundingBox.X += maxX;
@@ -158,7 +157,7 @@ namespace Contagion
 
             Rectangle wallCollision = map.CheckCollision(futureBoundingBox);
 
-            if (wallCollision != Rectangle.Empty)
+            if(wallCollision != Rectangle.Empty)
             {
                 if (applyGravity == true && velocity.Y >= gravity && (futureBoundingBox.Bottom > wallCollision.Top - maxSpeed) && (futureBoundingBox.Bottom <= wallCollision.Top + velocity.Y))
                 {
@@ -170,7 +169,7 @@ namespace Contagion
             }
 
             // Object collisions
-            for (int i = 0; i < objects.Count; i++)
+            for(int i = 0; i < objects.Count; i++)
             {
                 if (objects[i] != this && objects[i].active == true && objects[i].collidable == true && objects[i].CheckCollision(futureBoundingBox) == true)
                     return true;

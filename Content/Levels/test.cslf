@@ -26,10 +26,10 @@
       <Y>0</Y>
     </velocity>
   </Player>
-  <Enemy>
+  <PowerUp>
     <position>
-      <X>689</X>
-      <Y>522</Y>
+      <X>1280</X>
+      <Y>0</Y>
     </position>
     <drawColor>
       <B>255</B>
@@ -44,14 +44,10 @@
     <active>true</active>
     <collidable>false</collidable>
     <startPosition>
-      <X>689</X>
-      <Y>522</Y>
-    </startPosition>
-    <velocity>
-      <X>0</X>
+      <X>1280</X>
       <Y>0</Y>
-    </velocity>
-  </Enemy>
+    </startPosition>
+  </PowerUp>
   <walls>
     <Wall>
       <wall>
@@ -89,12 +85,12 @@
         <X>0</X>
         <Y>0</Y>
       </startPosition>
-      <imagePath>background</imagePath>
+      <imagePath>citybackground</imagePath>
       <sourceRect>
         <X>0</X>
         <Y>0</Y>
-        <Width>1280</Width>
-        <Height>720</Height>
+        <Width>8192</Width>
+        <Height>1024</Height>
         <Location>
           <X>0</X>
           <Y>0</Y>
@@ -102,6 +98,6 @@
       </sourceRect>
     </Decor>
   </decor>
-  <mapWidth>15</mapWidth>
-  <mapHeight>9</mapHeight>
+  <mapWidth>40</mapWidth>
+  <mapHeight>22</mapHeight>
 </LevelData>

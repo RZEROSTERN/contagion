@@ -16,13 +16,14 @@ namespace Contagion
 
         public void Load(ContentManager content)
         {
-            font = content.Load<SpriteFont>("Fonts\\Arial");
+            font = content.Load<SpriteFont>("Fonts\\gamer");
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, SamplerState.LinearClamp, DepthStencilState.Default, RasterizerState.CullNone, null, Resolution.getTransformationMatrix());
-            spriteBatch.DrawString(font, "Score: " + Hero.score.ToString(), Vector2.Zero, Color.White);
+            spriteBatch.DrawString(font, "Score: " + Hero.score.ToString(), new Vector2(spriteBatch.GraphicsDevice.Viewport.Width - 90, 0), Color.White);
+            spriteBatch.DrawString(font, "Lives: " + Hero.lives.ToString(), new Vector2(10, 0), Color.White);
             spriteBatch.End();
         }
     }

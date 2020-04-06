@@ -61,7 +61,7 @@ namespace Contagion
 
             CalculateCenter();
 
-            if (image != null)
+            if(image != null)
             {
                 boundingBoxWidth = image.Width;
                 boundingBoxHeight = image.Height;
@@ -80,10 +80,10 @@ namespace Contagion
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            if (boundingBoxImage != null && drawBoundingBoxes == true && active == true)
+            if(boundingBoxImage != null && drawBoundingBoxes == true && active == true)
                 spriteBatch.Draw(boundingBoxImage, new Vector2(BoundingBox.X, BoundingBox.Y), BoundingBox, new Color(120, 120, 120, 120), 0f, Vector2.Zero, 1f, SpriteEffects.None, .1f);
 
-            if (image != null && active == true)
+            if(image != null && active == true)
                 spriteBatch.Draw(image, position, null, drawColor, rotation, Vector2.Zero, scale, SpriteEffects.None, layerDepth);
         }
 
@@ -100,5 +100,6 @@ namespace Contagion
             center.X = image.Width / 2;
             center.Y = image.Height / 2;
         }
+
     }
 }

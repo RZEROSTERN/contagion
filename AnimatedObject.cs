@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -37,7 +36,7 @@ namespace Contagion
             center.X = animationSet.width / 2;
             center.Y = animationSet.height / 2;
 
-            if (animationSet.animationList.Count > 0)
+            if(animationSet.animationList.Count > 0)
             {
                 currentAnimation = animationSet.animationList[0];
                 currentAnimationFrame = 0;
@@ -77,7 +76,7 @@ namespace Contagion
 
             animationTimer--;
 
-            if (animationTimer <= 0)
+            if(animationTimer <= 0)
             {
                 animationTimer = currentAnimation.speed;
 
@@ -113,7 +112,7 @@ namespace Contagion
         {
             string name = GetAnimationName(animation);
 
-            for (int i = 0; i < animationSet.animationList.Count; i++)
+            for(int i = 0; i < animationSet.animationList.Count; i++)
             {
                 if (animationSet.animationList[i].name == name)
                     return animationSet.animationList[i];

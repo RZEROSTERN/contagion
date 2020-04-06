@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -49,7 +48,7 @@ namespace Contagion
 
         private void CheckCollisions(List<GameObject> objects, Map map)
         {
-            for (int i = 0; i < objects.Count; i++)
+            for(int i = 0; i < objects.Count; i++)
             {
                 if (objects[i].active == true && objects[i] != owner && objects[i].CheckCollision(BoundingBox) == true)
                 {

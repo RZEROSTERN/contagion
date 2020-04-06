@@ -44,7 +44,7 @@
     <None Include="Content\Animations\ShyBoy.anm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Content\Fonts\Arial.xnb">
+    <None Include="Content\Fonts\gamer.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Content\Levels\test.cslf">
@@ -65,11 +65,11 @@
     </Compile>
     <Compile Include="Enemy.cs" />
     <Compile Include="FireCharacter.cs" />
+    <Compile Include="Game1.cs" />
     <Compile Include="GameHUD.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="Hero.cs" />
     <Compile Include="LevelData.cs" />
-    <Compile Include="MainEngine.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="PowerUp.cs" />
     <Compile Include="Program.cs" />
@@ -82,7 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FNA">
-      <HintPath>..\Children's Story\Children's Story\FNA.dll</HintPath>
+      <HintPath>.\FNA.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -100,10 +100,13 @@
     <Content Include="Content\128grid.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Audio\boss.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Audio\explosion.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Audio\song.wav">
+    <Content Include="Content\Audio\lv1loop.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\background.png">
@@ -112,10 +115,16 @@
     <Content Include="Content\bullet.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\citybackground.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\decorplaceholder.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\enemy.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\mainspitesheet.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\orbsheet.png">

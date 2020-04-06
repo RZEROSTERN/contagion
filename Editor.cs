@@ -21,7 +21,7 @@ namespace Contagion
 
     public partial class Editor : Form
     {
-        public MainEngine game;
+        public Game1 game;
         IntPtr gameWinHandle; //HWND for the game window.
 
         public enum CreateMode { None, Walls, Objects, Decor };
@@ -43,7 +43,7 @@ namespace Contagion
 
         const string objectsNamespace = "Contagion."; //IMPORTANT: Type the namespace here that all of your classes will be in! Make sure you spell it exactly and put a . at the end!
 
-        public Editor(MainEngine inputGame)
+        public Editor(Game1 inputGame)
         {
             InitializeComponent();
 

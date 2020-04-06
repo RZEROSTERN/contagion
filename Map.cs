@@ -16,9 +16,9 @@ namespace Contagion
         public List<Wall> walls = new List<Wall>();
         Texture2D wallImage;
 
-        public int mapWidth = 15; // Ancho del mapa (en tiles)
-        public int mapHeight = 9; // Alto del mapa (en tiles)
-        public int tileSize = 128; // Tamaño de los tiles
+        public int mapWidth = 40;
+        public int mapHeight = 22;
+        public int tileSize = 32;
 
         public void LoadMap(ContentManager content)
         {
@@ -35,7 +35,7 @@ namespace Contagion
         {
             for (int i = 0; i < walls.Count; i++)
             {
-                if (walls[i] != null && walls[i].wall.Intersects(input) == true)
+                if(walls[i] != null && walls[i].wall.Intersects(input) == true)
                 {
                     return walls[i].wall;
                 }
@@ -52,9 +52,9 @@ namespace Contagion
 
         public void DrawWalls(SpriteBatch spriteBatch)
         {
-            for (int i = 0; i < walls.Count; i++)
+            for(int i = 0; i < walls.Count; i++)
             {
-                if (walls[i] != null && walls[i].active == true)
+                if(walls[i] != null && walls[i].active == true)
                     spriteBatch.Draw(wallImage, new Vector2(walls[i].wall.X, walls[i].wall.Y), walls[i].wall, Color.Black, 0f, Vector2.Zero, 1f, SpriteEffects.None, .7f);
             }
         }
@@ -127,7 +127,7 @@ namespace Contagion
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            if (image != null && active == true)
+            if(image != null && active == true)
             {
                 spriteBatch.Draw(image, position, sourceRect, drawColor, rotation, Vector2.Zero, scale, SpriteEffects.None, layerDepth);
             }

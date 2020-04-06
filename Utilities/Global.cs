@@ -6,11 +6,11 @@ namespace Contagion
 {
     static class Global
     {
-        public static Level1 game;
+        public static Game1 game;
         public static Random random = new Random();
         public static string levelName;
 
-        public static void Initialize(Level1 inputGame)
+        public static void Initialize(Game1 inputGame)
         {
             game = inputGame;
         }
